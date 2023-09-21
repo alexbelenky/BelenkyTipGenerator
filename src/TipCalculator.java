@@ -32,10 +32,13 @@ public class TipCalculator {
         System.out.println("Total percantage: " + tipPercentage + "%");
 
         double totalTip = (finalBillPrice * (tipPercentage / 100.0));
+        double finalPrice = totalTip + finalBillPrice;
 
         System.out.println("Total tip: " + formatter.format(totalTip));
         System.out.println("Total bill with tip: " + formatter.format(totalTip + finalBillPrice));
-
+        System.out.println("Per person before tip :" + formatter.format(finalBillPrice / amountPeople));
+        System.out.println("Tip per person: " + formatter.format(totalTip / amountPeople));
+        System.out.println("Total cost per person: " + formatter.format(finalPrice / amountPeople));
 
 
     }
