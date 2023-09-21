@@ -33,7 +33,6 @@ public class TipCalculator {
 
         double totalTip = (finalPrice * (tipPercentage / 100.0));
 
-
         System.out.println(formatter.format(totalTip));
 
 
