@@ -17,24 +17,26 @@ public class TipCalculator {
         scan.nextLine();
 
         double priceEntered = 0;
-        double finalPrice = 0;
+        double finalBillPrice = 0;
 
         while (priceEntered > -1) {
             System.out.print("Enter the cost of the food item purchased in dollars and cents (-1 to end) : ");
             priceEntered = scan.nextDouble();
 
-            finalPrice += priceEntered;
+            finalBillPrice += priceEntered;
         }
-        finalPrice ++;
+        finalBillPrice ++;
 
         System.out.println("-------------------------------");
-        System.out.println("Total bill before the tip = " + finalPrice);
+        System.out.println("Total bill before the tip = " + formatter.format(finalBillPrice));
         System.out.println("Total percantage: " + tipPercentage + "%");
 
-        double totalTip = (finalPrice * (tipPercentage / 100.0));
+        double totalTip = (finalBillPrice * (tipPercentage / 100.0));
 
-        System.out.println(formatter.format(totalTip));
+        System.out.println("Total tip: " + formatter.format(totalTip));
+        System.out.println("Total bill with tip: " + formatter.format(totalTip + finalBillPrice));
 
-        //testing if github will recieve this snapshot
+
+
     }
 }
