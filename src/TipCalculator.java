@@ -18,12 +18,23 @@ public class TipCalculator {
 
         double priceEntered = 0;
         double finalBillPrice = 0;
+        String foodEntered;
+        int i = 0;
+
+        String[] foodOrdered = new String[5];
 
         while (priceEntered > -1) {
+            System.out.println("");
             System.out.print("Enter the cost of the food item purchased in dollars and cents (-1 to end) : ");
             priceEntered = scan.nextDouble();
-
             finalBillPrice += priceEntered;
+
+            System.out.println("");
+            System.out.print("Enter the food ordered : ");
+            foodEntered = scan.nextLine();
+            foodOrdered[i] = foodEntered;
+            i++;
+
         }
         finalBillPrice ++;
 
@@ -40,6 +51,7 @@ public class TipCalculator {
         System.out.println("Tip per person: " + formatter.format(totalTip / amountPeople));
         System.out.println("Total cost per person: " + formatter.format(finalPrice / amountPeople));
 
-
+        for ( i = 0; i < foodOrdered.length; i++)
+            System.out.println("Element at index " + i + " : " + foodOrdered[i]);
     }
 }
