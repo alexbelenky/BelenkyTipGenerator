@@ -29,7 +29,7 @@ public class TipCalculator {
 
         System.out.println("-------------------------------");
         System.out.println("Total bill before the tip = " + formatter.format(finalBillPrice));
-        System.out.println("Total percantage: " + tipPercentage + "%");
+        System.out.println("Total percentage: " + tipPercentage + "%");
 
         double totalTip = (finalBillPrice * (tipPercentage / 100.0));
         double finalPrice = totalTip + finalBillPrice;
