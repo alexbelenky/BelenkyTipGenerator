@@ -17,7 +17,7 @@ public class TipCalculator {
         String foodEntered;
         int i = 0;
 
-        String[] foodOrdered = new String[5];
+        String[] foodOrdered = new String[999];
 
         while (priceEntered > -1) {
             priceEntered = Double.parseDouble(askQuestion("Enter the cost of the food item purchased in dollars and cents (-1 to end) : "));
@@ -27,8 +27,7 @@ public class TipCalculator {
                 break;
             }
 
-            foodEntered = askQuestion("Enter the food ordered : ");
-            foodOrdered[i] = foodEntered;
+            foodOrdered[i] = askQuestion("Enter the food ordered : ");
             i++;
 
         }
@@ -46,10 +45,13 @@ public class TipCalculator {
         System.out.println("Per person before tip :" + formatter.format(finalBillPrice / amountPeople));
         System.out.println("Tip per person: " + formatter.format(totalTip / amountPeople));
         System.out.println("Total cost per person: " + formatter.format(finalPrice / amountPeople));
+        System.out.println("-------------------------------");
         System.out.println("Items Ordered:");
 
         for ( i = 0; i < foodOrdered.length; i++)
-            System.out.println(foodOrdered[i]);
+            if (foodOrdered[i] != null) {
+                System.out.println(foodOrdered[i]);
+            }
     }
 
     public static String askQuestion(String question) {
