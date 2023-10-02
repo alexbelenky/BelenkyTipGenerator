@@ -8,13 +8,9 @@ public class TipCalculator {
 
         System.out.println("Welcome to the tip calculator!");
         System.out.println("-------------------------------");
-        System.out.print("How many people feasted on the food? :");
-        int amountPeople = scan.nextInt();
-        scan.nextLine();
+        int amountPeople = Integer.parseInt(askQuestion("How many people feasted on the food? : "));
 
-        System.out.print("What is the tip percentage? (0-100) :");
-        int tipPercentage = scan.nextInt();
-        scan.nextLine();
+        int tipPercentage = Integer.parseInt(askQuestion("What is the tip percentage? (0-100) : "));
 
         double priceEntered = 0;
         double finalBillPrice = 0;
@@ -54,4 +50,11 @@ public class TipCalculator {
         for ( i = 0; i < foodOrdered.length; i++)
             System.out.println("Element at index " + i + " : " + foodOrdered[i]);
     }
+
+    public static String askQuestion(String question) {
+        System.out.print(question);
+        Scanner scan = new Scanner(System.in);
+        return scan.nextLine();
+    }
 }
+
